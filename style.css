@@ -33,14 +33,13 @@ button,input{font:inherit}
 
 /* hero */
 .hero{background:var(--navy);color:var(--on-dark);padding:72px 24px 120px;text-align:center;position:relative;overflow:hidden}
-.dot{position:absolute;width:18px;height:18px;border-radius:4px;opacity:.9;animation:bob 6s ease-in-out infinite}
-.d1{background:#f9e79f;top:36px;left:8%;--r:-8deg}
-.d2{background:#ff64c8;top:110px;left:18%;--r:10deg;width:14px;height:14px;animation-delay:-1.5s}
-.d3{background:#2a9d99;top:48px;right:12%;--r:6deg;animation-delay:-3s}
-.d4{background:#dd5b00;top:130px;right:20%;--r:-12deg;width:14px;height:14px;animation-delay:-4.5s}
-.d5{background:#7b3ff2;bottom:60px;left:12%;--r:14deg;animation-delay:-2s}
-.d6{background:#1aae39;bottom:70px;right:10%;--r:-6deg;animation-delay:-5s}
-@keyframes bob{0%,100%{transform:translateY(0) rotate(var(--r))}50%{transform:translateY(-8px) rotate(calc(var(--r) + 8deg))}}
+.wave{position:absolute;left:0;right:0;bottom:-1px;height:88px;overflow:hidden;pointer-events:none}
+.wave svg{position:absolute;left:0;bottom:0;width:200%;height:100%}
+.wave path{fill:var(--canvas)}
+.w1{animation:wave 26s linear infinite reverse}
+.w1 path{opacity:.35}
+.w2{animation:wave 16s linear infinite}
+@keyframes wave{to{transform:translateX(-50%)}}
 .hero-in{position:relative;max-width:640px;margin:0 auto}
 h1{font-size:clamp(44px,9vw,80px);line-height:1.05;letter-spacing:-2px;font-weight:600;margin:0 0 16px}
 .sub{font-size:18px;line-height:1.5;color:var(--on-dark-muted);margin:0 auto 28px;max-width:520px}
