@@ -1,5 +1,7 @@
 # driverectly · share files without the hassle
 
+[try it here! ↗](https://aqilmuh.github.io/driverectly/)
+
 Direct link from Google Drive to download file or preview in web without having people to see your Drive.
 
 No backend, no database, no uploads. Everything runs in your browser, so your files are never seen by anyone.
