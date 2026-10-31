@@ -1,6 +1,6 @@
-# driverectly
+# driverectly · share files without the hassle
 
-Turn a public Google Drive file into a direct download link or a website-ready image link.
+Direct link from Google Drive to download file or preview in web without having people to see your Drive.
 
 No backend, no database, no uploads. Everything runs in your browser, so your files are never seen by anyone.
 
@@ -14,28 +14,10 @@ No backend, no database, no uploads. Everything runs in your browser, so your fi
 
 ## Link types
 
-| Type | Format |
+| Type | Usage |
 | --- | --- |
-| Download link | `https://drive.google.com/uc?export=download&id={FILE_ID}` |
-| Image preview link | `https://lh3.googleusercontent.com/d/{FILE_ID}` |
-
-The image preview link can be used directly as an image source:
-
-```html
-<img src="https://lh3.googleusercontent.com/d/{FILE_ID}" alt="">
-```
-
-## Run locally
-
-It's plain HTML, CSS and JavaScript, so there is nothing to install. Open `index.html` in your browser.
-
-To serve it locally instead:
-
-```bash
-python3 -m http.server 8000
-```
-
-Then visit `http://localhost:8000`.
+| Download link | Use it in PDFs or Canva Presentation as a direct download |
+| Image preview link | Use in website to preview image using `<img src="">` tag |
 
 ## Project structure
 
@@ -50,7 +32,7 @@ driverectly/
 
 - The file must be shared publicly, or the links won't work.
 - Anyone with the converted link can open the file, so only convert files you're fine making public.
-- Folder links aren't supported, only file links.
+- **Folder links aren't supported, only file links.**
 - Large files may show a Google virus-scan page before downloading.
 
 ## License
