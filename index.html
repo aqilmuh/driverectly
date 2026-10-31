@@ -12,11 +12,14 @@
 
 <div id="app">
 <header class="hero">
-  <i class="dot d1"></i><i class="dot d2"></i><i class="dot d3"></i><i class="dot d4"></i><i class="dot d5"></i><i class="dot d6"></i>
   <div class="hero-in">
     <h1>driverectly</h1>
     <p class="sub">Turn a public Google Drive link into a direct download link or a website-ready image link.</p>
     <button class="btn btn-hero" type="button" id="open-how">How it works</button>
+  </div>
+  <div class="wave" aria-hidden="true">
+    <svg class="w1" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0,50 C180,100 540,100 720,50 C900,0 1260,0 1440,50 C1620,100 1980,100 2160,50 C2340,0 2700,0 2880,50 V120 H0 Z"/></svg>
+    <svg class="w2" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0,60 C240,0 480,0 720,60 C960,120 1200,120 1440,60 C1680,0 1920,0 2160,60 C2400,120 2640,120 2880,60 V120 H0 Z"/></svg>
   </div>
 </header>
 
@@ -79,7 +82,7 @@
       <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
     <h2 id="how-title">How it works</h2>
-    <p class="lead">Four steps, no sign-in or file uploads. The link is rebuilt right in your browser.</p>
+    <p class="lead">Four steps, no sign-in. The link is rebuilt right in your browser.</p>
     <ol class="steps">
       <li class="step s1"><h3>1. Share the file publicly</h3><p>In Google Drive, open Share, set General access to “Anyone with the link”, and keep the role as Viewer.</p></li>
       <li class="step s2"><h3>2. Paste the share link</h3><p>Copy the link from Drive. It looks like <code>https://drive.google.com/file/d/FILE_ID/view</code>.</p></li>
@@ -94,3 +97,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
