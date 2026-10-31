@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>driverectly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+<header class="hero">
+  <i class="dot d1"></i><i class="dot d2"></i><i class="dot d3"></i><i class="dot d4"></i><i class="dot d5"></i><i class="dot d6"></i>
+  <div class="hero-in">
+    <h1>driverectly</h1>
+    <p class="sub">Turn a public Google Drive link into a direct download link or a website-ready image link.</p>
+    <button class="btn btn-hero" type="button" id="open-how">How it works</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="tool">
+    <div class="notice" id="notice">
+      <div class="notice-in">
+        <p>Share the file first: set General access to <strong>Anyone with the link</strong> and the role to <strong>Viewer</strong>. Everything runs in your browser. No database, no uploads, so we can’t see your files.</p>
+        <button class="x" type="button" id="close-notice" aria-label="Dismiss notice">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <label class="lbl" for="link">Google Drive share link</label>
+    <input type="text" id="link" placeholder="https://drive.google.com/file/d/…/view?usp=sharing" autocomplete="off" spellcheck="false">
+    <p class="err" id="err" role="alert"></p>
+
+    <div class="seg" id="seg" role="group" aria-label="Output type" data-mode="dl">
+      <div class="goo"><span class="blob"></span></div>
+      <button type="button" id="m-dl" aria-pressed="true">Download link</button>
+      <button type="button" id="m-img" aria-pressed="false">Image preview link</button>
+    </div>
+
+    <button class="btn btn-primary" type="button" id="go">Convert link</button>
+
+    <div class="result" id="result" hidden>
+      <span class="tag dl" id="rtag">Download link</span>
+      <div class="out">
+        <input type="text" id="out" readonly aria-label="Converted link">
+        <button class="btn btn-ink" type="button" id="copy">Copy</button>
+      </div>
+      <div class="row">
+        <a class="btn btn-secondary" id="open" href="#" target="_blank" rel="noopener noreferrer">Open link</a>
+      </div>
+      <div class="preview" id="preview" hidden>
+        <p class="plabel">Preview</p>
+        <div class="frame">
+          <img id="prev" alt="Preview of the Drive image" referrerpolicy="no-referrer">
+          <p class="pfail" id="pfail" hidden>Couldn’t load a preview. Check that the file is a public image.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <a class="gh" href="https://github.com/your-username/driverectly" target="_blank" rel="noopener noreferrer" aria-label="Star driverectly on GitHub">
+    <span class="l"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 .6l2.2 4.7 5.1.7-3.7 3.6.9 5.1L8 12.2 3.5 14.7l.9-5.1L.7 6l5.1-.7z"/></svg>Star</span>
+    <span>on GitHub</span>
+  </a>
+  <div>driverectly · share files without the hassle</div>
+</footer>
+</div>
+
+<div class="modal" id="modal" hidden>
+  <div class="scrim" id="scrim"></div>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="how-title" tabindex="-1">
+    <button class="x x-modal" type="button" id="close-how" aria-label="Close">
+      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <h2 id="how-title">How it works</h2>
+    <p class="lead">Four steps, no sign-in. The link is rebuilt right in your browser.</p>
+    <ol class="steps">
+      <li class="step s1"><h3>1. Share the file publicly</h3><p>In Google Drive, open Share, set General access to “Anyone with the link”, and keep the role as Viewer.</p></li>
+      <li class="step s2"><h3>2. Paste the share link</h3><p>Copy the link from Drive. It looks like <code>https://drive.google.com/file/d/FILE_ID/view</code>.</p></li>
+      <li class="step s3"><h3>3. Pick a link type</h3><p>Choose Download link to start a file download, or Image preview link to use a picture on a website.</p></li>
+      <li class="step s4"><h3>4. Copy and use it</h3><p>Paste the result anywhere: a button, an <code>&lt;img src&gt;</code> tag, a README, or a chat.</p></li>
+    </ol>
+    <div class="card"><h3>Download link</h3><p><code>https://drive.google.com/uc?export=download&amp;id=FILE_ID</code></p></div>
+    <div class="card"><h3>Image preview link</h3><p><code>https://lh3.googleusercontent.com/d/FILE_ID</code></p></div>
+    <p class="fine">Anyone with the converted link can open the file, so only convert files you’re fine making public.</p>
+    <button class="btn btn-primary" type="button" id="done-how">Got it</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
